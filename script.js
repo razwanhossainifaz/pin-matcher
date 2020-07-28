@@ -2,8 +2,8 @@
 
 document.getElementById('generateBtn').addEventListener('click',function(){
     const generatePin = document.getElementById('generatePin');
-    const generateRndPin = Math.floor(1000 + Math.random(generatePin) * 9000);
-    const generateNewPin = Math.round(generateRndPin);
+    const generateRndmPin = Math.floor(1000 + Math.random(generatePin) * 9000);
+    const generateNewPin = Math.round(generateRndmPin);
     document.getElementById('generatePin').value = generateNewPin;
 });
 
@@ -19,7 +19,7 @@ function back(){
 
 /* ------------------- pin validation ------------------------- */
 
-document.querySelector('#submitBtn').addEventListener('click', function submit(input){
+document.getElementById('submitBtn').addEventListener('click', function submit(input){
     const generatePin = document.getElementById('generatePin');
     const submitPin = document.getElementById('submitPin');
     const notMatch = document.getElementById('notMatch');

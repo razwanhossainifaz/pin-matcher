@@ -88,10 +88,11 @@ color: #E0B612;
     color: #fff;
 }
 .submit-btn:hover{
+    color: black;
     font-weight: 800;
 	background-color: orange;
 	transition: 0.25s;
-	box-shadow: 5px 5px 10px gray;
+	box-shadow: 2px 2px 15px gray;
 }
 .notify {
     color: #fff;
@@ -121,8 +122,14 @@ color: #E0B612;
 }
 .cross{
     background-color: red;
+    width: 20px;
+    height: 20px;
 }
-.right{
+/* .right{
     background-color: rgb(148, 245, 148);
-    color: black;
+} */
+.check-symbol{
+    width: 20px;
+    height: 20px;
+    background-color: green;
 }
