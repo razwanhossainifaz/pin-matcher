@@ -19,33 +19,27 @@ function back(){
 
 /* ------------------- pin validation ------------------------- */
 
+const submitPin = document.getElementById('submitPin');
+const generatePin = document.getElementById('generatePin');
+let match = document.getElementById('match');
+let notMatch = document.getElementById('notMatch');
+let attempt = document.getElementById('attempt');
+
 document.getElementById('submitBtn').addEventListener('click', function(){
-    const generatePin = document.getElementById('generatePin');
-    const submitPin = document.getElementById('submitPin');
-    const notMatch = document.getElementById('notMatch');
-    const match = document.getElementById('match');
-    const submitBtn = document.getElementById('submitBtn');
-
-    if(parseInt(submitPin.value) == parseInt(generatePin.value)){
-        notMatch.style.display = "none";
-        match.style.display = "block";
-        return;
+    if (submitPin.value == generatePin.value){
+        match.style.display = 'block';
+        notMatch.style.display = 'none';
+    } else {
+        notMatch.style.display = 'block';
+        submitPin.value = '';
+        match.style.display = 'none';
+        attempt.innerHTML--;
     }
-
-    if(tryLeft.innerText > 0){
-		const tryLeft = document.getElementById('tryLeft');
-		notMatch.style.display = "block";
-		tryLeft.innerText = parseInt(tryLeft.innerText) - 1;
-		return;
-    }
-
-    if(tryLeft.innerText == 0){
-        tryLeft.innerText = "Sorry..No more"
+    if (attempt.innerHTML < 1){
         submitBtn.disabled = true;
-        submitBtn.style.color = 'black';
-        submitBtn.style.backgroundColor = 'white';
-        return;
+        submitPin.value = '';
+        submitBtn.style.background = '#717277';
+        attempt.innerHTML = 'Sorry.. no more'
     }
 });
-
 
