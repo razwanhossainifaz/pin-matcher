@@ -19,7 +19,7 @@ function back(){
 
 /* ------------------- pin validation ------------------------- */
 
-document.getElementById('submitBtn').addEventListener('click', function submit(input){
+document.getElementById('submitBtn').addEventListener('click', function(){
     const generatePin = document.getElementById('generatePin');
     const submitPin = document.getElementById('submitPin');
     const notMatch = document.getElementById('notMatch');
@@ -29,7 +29,6 @@ document.getElementById('submitBtn').addEventListener('click', function submit(i
     if(parseInt(submitPin.value) == parseInt(generatePin.value)){
         notMatch.style.display = "none";
         match.style.display = "block";
-		submitBtn.disabled = true;
         return;
     }
 
@@ -45,6 +44,7 @@ document.getElementById('submitBtn').addEventListener('click', function submit(i
         submitBtn.disabled = true;
         submitBtn.style.color = 'black';
         submitBtn.style.backgroundColor = 'white';
+        return;
     }
 });
 
