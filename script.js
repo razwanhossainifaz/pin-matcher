@@ -2,8 +2,8 @@
 
 document.getElementById('generateBtn').addEventListener('click',function(){
     const generatePin = document.getElementById('generatePin');
-    const generateRndmPin = Math.floor(1000 + Math.random(generatePin) * 9000);
-    const generateNewPin = Math.round(generateRndmPin);
+    const generateRandomPin = Math.floor(1000 + Math.random(generatePin) * 9000);
+    const generateNewPin = Math.round(generateRandomPin);
     document.getElementById('generatePin').value = generateNewPin;
 });
 
@@ -29,7 +29,7 @@ document.getElementById('submitBtn').addEventListener('click', function submit(i
     if(parseInt(submitPin.value) == parseInt(generatePin.value)){
         notMatch.style.display = "none";
         match.style.display = "block";
-		submitButton.disabled = true;
+		submitBtn.disabled = true;
         return;
     }
 
@@ -40,5 +40,6 @@ document.getElementById('submitBtn').addEventListener('click', function submit(i
         submitBtn.style.disabled = true;
 		return;
     }
-})
+});
+
 
