@@ -37,8 +37,14 @@ document.getElementById('submitBtn').addEventListener('click', function submit(i
 		const tryLeft = document.getElementById('tryLeft');
 		notMatch.style.display = "block";
 		tryLeft.innerText = parseInt(tryLeft.innerText) - 1;
-        submitBtn.style.disabled = true;
 		return;
+    }
+
+    if(tryLeft.innerText == 0){
+        tryLeft.innerText = "Sorry..No more"
+        submitBtn.disabled = true;
+        submitBtn.style.color = 'black';
+        submitBtn.style.backgroundColor = 'white';
     }
 });
 
