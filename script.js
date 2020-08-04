@@ -29,15 +29,21 @@ document.getElementById('submitBtn').addEventListener('click', function(){
     if (inputPin.value == generatePin.value){
         match.style.display = 'block';
         notMatch.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.style.color = 'white';
+        submitBtn.style.background = '#717277';
     } else {
+        match.style.display = 'none';
         notMatch.style.display = 'block';
         inputPin.value = '';
-        match.style.display = 'none';
+        inputPin.placeholder = "Enter Right 4 digit generate pin";
         attempt.innerHTML--;
     }
     if (attempt.innerHTML < 1){
+        notMatch.style.display = 'none';
         submitBtn.disabled = true;
         inputPin.value = '';
+        inputPin.placeholder = "Please..Refresh the page and try again."
         submitBtn.style.color = 'white';
         submitBtn.style.background = '#717277';
         attempt.innerHTML = 'Sorry.. no more'
