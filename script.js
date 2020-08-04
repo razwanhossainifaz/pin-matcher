@@ -19,25 +19,26 @@ function back(){
 
 /* ------------------- pin validation ------------------------- */
 
-const submitPin = document.getElementById('submitPin');
+const inputPin = document.getElementById('inputPin');
 const generatePin = document.getElementById('generatePin');
 let match = document.getElementById('match');
 let notMatch = document.getElementById('notMatch');
 let attempt = document.getElementById('attempt');
 
 document.getElementById('submitBtn').addEventListener('click', function(){
-    if (submitPin.value == generatePin.value){
+    if (inputPin.value == generatePin.value){
         match.style.display = 'block';
         notMatch.style.display = 'none';
     } else {
         notMatch.style.display = 'block';
-        submitPin.value = '';
+        inputPin.value = '';
         match.style.display = 'none';
         attempt.innerHTML--;
     }
     if (attempt.innerHTML < 1){
         submitBtn.disabled = true;
-        submitPin.value = '';
+        inputPin.value = '';
+        submitBtn.style.color = 'white';
         submitBtn.style.background = '#717277';
         attempt.innerHTML = 'Sorry.. no more'
     }
